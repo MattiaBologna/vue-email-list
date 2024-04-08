@@ -10,16 +10,27 @@ const { createApp } = Vue
     },
     methods: {
         fetchMail() {
-            for (i = 0; i < 10; i++) {
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then(function (res) {
                 const mail = res.data.response
-                console.log(`mail: `, mail)
-                this.mailList.push(mail)
+                console.log(mail)
             })
-        }
         console.log('array mail: ', this.mailList)
-        }
+        },
+        fetchMails(n) {
+			for (let i = 0; i < n; i++) {
+				axios
+					.get('https://flynn.boolean.careers/exercises/api/random/mail')
+					.then( (res) => {
+						this.mailList.push(res.data.response)
+					})
+			}
+            console.log(this.mailList)
+		}
+    },
+    created() {
+        this.fetchMail()
+        this.fetchMails(10)
     }
   }).mount('#app')
 

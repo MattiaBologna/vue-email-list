@@ -11,9 +11,12 @@
     <div id="app">
         
         <button @click="fetchMail">GENERA MAIL</button>
-
+        
         <ul id="mail--list">LISTA DI MAIL
-            
+            <li v-for="mail in mailList">
+                {{mail}}
+            </li>
+        </ul>
     </div>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
