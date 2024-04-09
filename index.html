@@ -10,10 +10,10 @@
     
     <div id="app">
         
-        <button @click="fetchMail">GENERA MAIL</button>
+        <button @click="fetchMails(10)">GENERA MAIL</button>
         
         <ul id="mail--list">LISTA DI MAIL
-            <li v-for="mail in mailList">
+            <li v-if="mailList.length === 10" v-for="mail in mailList">
                 {{mail}}
             </li>
         </ul>

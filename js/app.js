@@ -30,7 +30,7 @@ const { createApp } = Vue
     },
     created() {
         this.fetchMail()
-        this.fetchMails(10)
+        // this.fetchMails(10)
     }
   }).mount('#app')
 
